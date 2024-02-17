@@ -6,14 +6,11 @@ model = torch.hub.load('','custom','yolov5s.pt',source='local')
 
 # Webcam Open
 cap = cv2.VideoCapture(0)
-
 # Webcam Frame set
 cap.set(cv2.CAP_PROP_FRAME_WIDTH,640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT,480)
-
 # Webcam FPS set
 cap.set(cv2.CAP_PROP_FPS,60)
-
 # Webcam In_Buffersize set
 cap.set(cv2.CAP_PROP_BUFFERSIZE,1)
 
