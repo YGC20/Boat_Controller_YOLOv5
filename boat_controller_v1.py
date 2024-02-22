@@ -102,14 +102,17 @@ cap = cv2.VideoCapture(0)
 # Webcam Frame set
 cap.set(cv2.CAP_PROP_FRAME_WIDTH,640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT,480)
+# Webcam FPS set
+cap.set(cv2.CAP_PROP_FPS,60)
+# Webcam In_Buffersize set
+cap.set(cv2.CAP_PROP_BUFFERSIZE,1)
 
 # target_object = bottle(39)
 target_obj = [39]
 
-if cap.IsOpened():
+if cap.isOpened():
     while True:
-        fps = cap.get(cv2.CAP_PROP_FPS)
-        delay = int(1000/fps)
+        delay = int(1000/60)
         distance = get_distance()
         
         if distance < 10:
