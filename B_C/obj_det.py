@@ -1,7 +1,7 @@
 import subprocess
 import json
 
-command = "python3 detect.py --source 0 --weights best.pt --conf 0.25"
+command = "python detect.py --source 0 --weights best.pt --conf 0.25 --img 300"
 result = subprocess.run(command,shell=True)
 
 # 실행 결과 확인

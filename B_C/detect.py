@@ -221,6 +221,8 @@ def run(
                         annotator.box_label(xyxy, label, color=colors(c, True))
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / "crops" / names[c] / f"{p.stem}.jpg", BGR=True)
+                
+                # Store detected objects information
                 for *xyxy, conf, cls in det:
                     obj_info = {
                         "class": int(cls),

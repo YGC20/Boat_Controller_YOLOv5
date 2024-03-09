@@ -95,7 +95,7 @@ pwmB = setPinConfig(ENB, IN3, IN4)
 
 
 # YOLOv5 model load
-model = torch.hub.load('','custom','yolov5s.pt',source='local')
+model = torch.hub.load('','custom','best.pt',source='local')
 
 # Webcam Open
 cap = cv2.VideoCapture(0)
@@ -122,7 +122,7 @@ if cap.isOpened():
             ret, frame = cap.read()
             if ret:
                 # Detect Object use YOLOv5
-                results = model(frame)
+                results = model(frame, size=300)
                 # Target Check
                 target_results = [result for result in results.pred[0] if result[-1] in target_obj]
                 # Visualize results
